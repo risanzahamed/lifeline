@@ -20,7 +20,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main >
+    <main className=" overflow-hidden">
       <Head>
         <title>Lifeline</title>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
