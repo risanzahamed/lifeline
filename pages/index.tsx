@@ -34,11 +34,11 @@ export default function Home() {
         <WhatWeDo />
         <Counter></Counter>
         <Gallary></Gallary>
-        <Companies />
         <JoinVulenteers></JoinVulenteers>
         <OurVulenteers></OurVulenteers>
-        <Testimonials />
+        <Companies />
         <BlogSection></BlogSection>
+        <Testimonials />
         <Newsletter></Newsletter>
       </div>
       <Footer></Footer>
