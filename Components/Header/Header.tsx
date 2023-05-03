@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../../public/images/logo.png'
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/router";
 
 const Header = () => {
-
+    const { user, logout } = useAuth()
+    const router = useRouter()
     return (
 
         <div className="bg-white ">
@@ -116,6 +119,42 @@ const Header = () => {
                                     Contact Us
                                 </Link>
                             </li>
+
+                            {
+                                user ?
+
+                                    <div >
+                                        <button onClick={logout} className="btn lg:ml-10 ml-4 mt-5 lg:mt-0  border-0 text-white hover:text-black hover:bg-[#dee0e3] bg-[#F26A02]">
+                                            LogOut
+                                        </button>
+                                    </div>
+
+                                    :
+                                    <>
+                                        <li>
+                                            <Link
+                                                href='/login'
+                                                aria-label='Login'
+                                                title='Login'
+                                                className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
+                                            >
+                                                Login
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href='/signup'
+                                                aria-label='Sign Up'
+                                                title='Sign Up'
+                                                className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
+                                            >
+                                                Sign Up
+                                            </Link>
+                                        </li>
+
+                                    </>
+
+                            }
                         </ul>
                     </div>
                     <Link
@@ -185,40 +224,75 @@ const Header = () => {
                                 Contact Us
                             </Link>
                         </li>
-                        <li>
-                            <Link
-                                href='/login'
-                                aria-label='Login'
-                                title='Login'
-                                className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
-                            >
-                                Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href='/signup'
-                                aria-label='Sign Up'
-                                title='Sign Up'
-                                className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
-                            >
-                                Sign Up
-                            </Link>
-                        </li>
+                        {
+                            user ?
+
+                                <div >
+                                    <button onClick={logout} className="btn lg:ml-10   border-0 text-white hover:text-black hover:bg-[#dee0e3] bg-[#F26A02]">
+                                        LogOut
+                                    </button>
+                                </div>
+
+                                :
+                                <>
+                                    <li>
+                                        <Link
+                                            href='/login'
+                                            aria-label='Login'
+                                            title='Login'
+                                            className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
+                                        >
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href='/signup'
+                                            aria-label='Sign Up'
+                                            title='Sign Up'
+                                            className='font-medium transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 tracking-wide text-black  hover:animate-pulse hover:bg-white  '
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </li>
+
+                                </>
+
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
 
 
-                    <Link
-                        href='/donate'
-                        aria-label='Donate Now'
-                        title='Donate Now'
-                        className="btn lg:px-12 lg:py-4 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 border-0 text-white hover:text-black hover:bg-[#dee0e3] bg-[#F26A02]"
+                    {
+                        user ?
+                            <div>
+                                <Link
+                                    href='/donate'
+                                    aria-label='Donate Now'
+                                    title='Donate Now'
+                                    className="btn lg:px-12 lg:py-4 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 border-0 text-white hover:text-black hover:bg-[#dee0e3] bg-[#F26A02]"
 
-                    >
-                        Donate Now
-                    </Link>
+                                >
+                                    Donate Now
+                                </Link>
+                            </div>
+                            : <div>
+                                <Link
+                                    href='/signup'
+                                    aria-label='Donate Now'
+                                    title='Donate Now'
+                                    className="btn lg:px-12 lg:py-4 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 border-0 text-white hover:text-black hover:bg-[#dee0e3] bg-[#F26A02]"
+
+                                >
+                                    Donate Now
+                                </Link>
+                            </div>
+                    }
+
+
+
+
 
 
 
