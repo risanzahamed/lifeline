@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
                     <div>
-                        <img className="w-[200px]" src="../../images/logo.png" alt="" />
+                        <img className="w-[200px]" src="../../images/logo-2.png.url" alt="" />
 
                         <ul className="mt-8 space-y-4">
                             <li>
