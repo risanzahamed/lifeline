@@ -3,31 +3,24 @@ import VulenteerModal from '../VulenteerModal/VulenteerModal';
 
 const JoinVulenteers = () => {
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-100">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left px-0 lg:px-16 px" data-aos="fade-down-right" data-aos-duration="3000">
-                        <h1 className="text-[24px] lg:text-[36px] font-bold lg:text-3xl">Join Our Volunteer</h1>
-                        <p className="py-2 text-justify font-semibold opacity-60 my-5">Join our volunteer team and make a difference in your community. Together, we can create positive change and uplift those in need. Sign up today and be a part of something meaningful.</p>
-                        <label htmlFor="joinVolunterers" className="btn btn-primary mt-2" >Join Now</label >
+        <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
+            <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                <div className="grid items-center grid-cols-1 gap-y-8 lg:grid-cols-2 gap-x-16 xl:gap-x-24">
+                    <div className="relative ">
+                        <img className="w-full lg:h-[400px] rounded-md" src="https://www.vrmvk.in/resources/EBVB/Volunteer/Volunteer.png" alt="" />
+
 
                     </div>
-                    <div className="card flex-shrink-0" data-aos="fade-down-left" data-aos-duration="3000">
-                        <div className="card-body">
 
-                            <Image
-                                src="/vtwo.png"
-                                alt="Volunteer"
-                                width={500}
-                                height={600}
-                            />
+                    <div>
 
-                        </div>
+                        <h2 className=" text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">Join Our Volunteer</h2>
+                        <p className="mt-6 text-lg leading-relaxed text-gray-600">Be the change you wish to see in the world. Join our NGOs volunteer program and actively participate in transformative initiatives. By joining our passionate team, you will have the opportunity to empower communities, protect the environment, and uplift marginalized voices. Together, let us create a brighter future. Sign up today and embark on a fulfilling journey of making a difference that truly matters.</p>
+                        <a href="#" title="" className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 rounded-md mt-9 bg-[#f26a02] to-blue-600 hover:opacity-80 focus:opacity-80" role="button"> Join Now </a>
                     </div>
                 </div>
             </div>
-            <VulenteerModal></VulenteerModal>
-        </div>
+        </section>
     );
 };
 
