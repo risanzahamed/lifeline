@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import VulenteerModal from '../VulenteerModal/VulenteerModal';
+import volenteer from "../../public/images/KC-Website-Slider-Volunteer-v1.webp"
 
 const JoinVulenteers = () => {
     return (
-        <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
+        <section className="py-10  sm:py-16 lg:py-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid items-center grid-cols-1 gap-y-8 lg:grid-cols-2 gap-x-16 xl:gap-x-24">
                     <div className="relative ">
-                        <img className="w-full lg:h-[400px] rounded-md" src="https://www.vrmvk.in/resources/EBVB/Volunteer/Volunteer.png" alt="" />
+                        <Image className="w-full lg:h-[400px] rounded-md" src={volenteer} alt="" />
 
 
                     </div>
